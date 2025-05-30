@@ -11,6 +11,16 @@ public class Agenda {
         contatos.add(contato);
     }
 
+    // Novo método para remover contato por nome
+    public boolean removerContato(String nome) {
+        Contato c = buscarPorNome(nome);
+        if (c != null) {
+            contatos.remove(c);
+            return true;
+        }
+        return false;
+    }
+
     public void removerContato(Contato contato) {
         contatos.remove(contato);
     }
