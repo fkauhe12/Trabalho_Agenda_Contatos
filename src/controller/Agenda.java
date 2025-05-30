@@ -5,36 +5,33 @@ import java.util.List;
 import model.Contato;
 
 public class Agenda {
-    // Atributos
-    private List<Contato> contatos;
+    private List<Contato> contatos = new ArrayList<>();
 
-    // Construtor
-    public Agenda() {
-        this.contatos = new ArrayList<>();
-    }
-    // Métodos
     public void adicionarContato(Contato contato) {
-        this.contatos.add(contato);
+        contatos.add(contato);
     }
+
     public void removerContato(Contato contato) {
-        this.contatos.remove(contato);
+        contatos.remove(contato);
     }
-    public Contato buscarContatoPorNome(String nome) {
-        for (Contato contato : contatos) {
-            if (contato.getNome().equalsIgnoreCase(nome)) {
-                return contato;
+
+    public Contato buscarPorNome(String nome) {
+        for (Contato c : contatos) {
+            if (c.getNome().equalsIgnoreCase(nome)) {
+                return c;
             }
         }
-        return null; // Retorna null se não encontrar
+        return null;
     }
+
     public List<Contato> listarTodos() {
-        return new ArrayList<>(contatos); // Retorna uma cópia da lista de contatos
+        return new ArrayList<>(contatos);
     }
-    public void editarContato(Contato contatoAntigo, Contato contatoNovo) {
-        int index = contatos.indexOf(contatoAntigo);
-        if (index != -1) {
-            contatos.set(index, contatoNovo);
+
+    public void editarContato(Contato antigo, Contato novo) {
+        int i = contatos.indexOf(antigo);
+        if (i != -1) {
+            contatos.set(i, novo);
         }
     }
-    
 }

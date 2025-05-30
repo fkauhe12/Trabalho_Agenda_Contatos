@@ -1,13 +1,8 @@
 package model;
 
 public class Endereco {
-    // Atributos
-    private String rua;
-    private String cidade;
-    private String estado;
-    private String cep;
+    private String rua, cidade, estado, cep;
 
-    // Construtor
     public Endereco(String rua, String cidade, String estado, String cep) {
         this.rua = rua;
         this.cidade = cidade;
@@ -15,44 +10,36 @@ public class Endereco {
         this.cep = cep;
     }
 
-    // Getters e Setters
-    public String getRua() {
-        return rua;
+    public String getRua(){
+        return rua; 
+    }
+    public void setRua(String rua){ 
+        this.rua = rua; 
     }
 
-    public void setRua(String rua) {
-        this.rua = rua;
+    public String getCidade(){
+        return cidade; 
+    }
+    public void setCidade(String cidade){
+        this.cidade = cidade; 
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getEstado(){
+        return estado; 
     }
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setEstado(String estado){
+        this.estado = estado; 
     }
-    public String getEstado() {
-        return estado;
+
+    public String getCep(){
+        return cep; 
     }
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setCep(String cep){ 
+        this.cep = cep; 
     }
-    public String getCep() {
-        return cep;
-    }
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
-    // Métodos
+
     @Override
     public String toString() {
-        return "Endereco{" +
-                "rua='" + rua + '\'' +
-                ", cidade='" + cidade + '\'' +
-                ", estado='" + estado + '\'' +
-                ", cep='" + cep + '\'' +
-                '}';
+        return rua + ", " + cidade + " - " + estado + ", CEP: " + cep;
     }
-
-    
-
 }
