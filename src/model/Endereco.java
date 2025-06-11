@@ -1,8 +1,10 @@
 package model;
 
 public class Endereco {
+    // Atributos
     private String rua, cidade, estado, cep;
 
+    // Construtor
     public Endereco(String rua, String cidade, String estado, String cep) {
         this.rua = rua;
         this.cidade = cidade;
@@ -10,6 +12,7 @@ public class Endereco {
         this.cep = cep;
     }
 
+    // Getters e Setters
     public String getRua(){
         return rua; 
     }
@@ -38,6 +41,7 @@ public class Endereco {
         this.cep = cep; 
     }
 
+    // Método toString
     @Override
     public String toString() {
         return rua + ", " + cidade + " - " + estado + ", CEP: " + cep;
